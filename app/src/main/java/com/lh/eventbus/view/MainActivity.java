@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param event 接受特定的对象
      */
-    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true, priority = 1)
     public void onMessageEvent(MessageEvent event) {
         Log.i("eventbus", event.toString());
         Toast.makeText(this, event.toString(), Toast.LENGTH_LONG).show();

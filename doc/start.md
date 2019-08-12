@@ -14,7 +14,7 @@ EventBus.getDefault().post(Object event);
 //接收
 //这里的方法名不是关键所在，关键是发送的Object和接收的Object需要保持一致
 //@Subscribe注解中有三个参数
-@Subscribe(threadMode = ThreadMode.MAIN)
+@Subscribe(threadMode = ThreadMode.MAIN, sticky = true, priority = 1)
 public void onEvent(Object event) {
     Log.i("eventbus", event.toString());
 }
